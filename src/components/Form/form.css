@@ -1,0 +1,6 @@
+input[type='file' i]::-webkit-file-upload-button {
+  display: none;
+}
+input[type='file'] {
+  width: 120px;
+}

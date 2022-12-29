@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import CreateReceipe from './components/CreateReceipe';
+import Home from './components/Home';
+import NavBar from './components/NavBar/NavBar';
+import ShowReceipeDetail from './components/ShowReceipeDetail';
+import ShowReceipeList from './components/ShowReceipeList';
+import UpdateReceipe from './components/UpdateReceipe';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Footer from './components/Footer/Footer';
 
-function App() {
+const theme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: 'nunito',
+    },
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div>
+          <NavBar />
+          <Home>
+            <Routes>
+              <Route exact path="/" element={<ShowReceipeList />} />
+              <Route path="/create-receipe" element={<CreateReceipe />} />
+              <Route path="/edit-receipe/:id" element={<UpdateReceipe />} />
+              <Route path="/show-receipe/:id" element={<ShowReceipeDetail />} />
+            </Routes>
+          </Home>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
