@@ -10,7 +10,7 @@ const ShowReceipeList = () => {
   const [deleted, setDeleted] = useState(false);
   useEffect(() => {
     axios
-      .get('http://localhost:8082/api/receipes')
+      .get('https://hot-receipe.onrender.com/api/receipes')
       .then((res) => {
         setReceipe(res.data);
       })

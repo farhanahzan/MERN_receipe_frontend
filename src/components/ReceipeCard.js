@@ -30,7 +30,7 @@ const ReceipeCard = ({ receipe, setDeleted }) => {
   const handleDeleteTrue = () => {
     if (open.show && open.id) {
       axios
-        .delete(`http://localhost:8082/api/receipes/${open.id}`)
+        .delete(`https://hot-receipe.onrender.com/api/receipes/${open.id}`)
         .then((res) => {
           setDeleted(true);
         })

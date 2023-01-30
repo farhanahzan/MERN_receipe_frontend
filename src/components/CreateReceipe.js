@@ -20,7 +20,7 @@ const CreateReceipe = (props) => {
   };
   const onSubmit = (e) => {
     axios
-      .post('http://localhost:8082/api/receipes', receipeData)
+      .post('https://hot-receipe.onrender.com/api/receipes', receipeData)
       .then((res) => {
         setReceipeData({
           id: '',

@@ -19,7 +19,7 @@ const ShowReceipeDetail = (props) => {
   useEffect(() => {
     return () => {
       axios
-        .get(`http://localhost:8082/api/receipes/${id}`)
+        .get(`https://hot-receipe.onrender.com/api/receipes/${id}`)
         .then((res) => {
           setReceipe(res.data);
         })
@@ -31,7 +31,7 @@ const ShowReceipeDetail = (props) => {
 
   // const onDeleteClick = (id) => {
   //   axios
-  //     .delete(`http://localhost:8082/api/receipes/${id}`)
+  //     .delete(`https://hot-receipe.onrender.com/api/receipes/${id}`)
   //     .then((res) => {
   //       navigate('/');
   //     })

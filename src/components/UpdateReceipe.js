@@ -16,7 +16,7 @@ const UpdateReceipe = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/receipes/${id}`)
+      .get(`https://hot-receipe.onrender.com/api/receipes/${id}`)
       .then((res) => {
         setReceipeData({
           receipeName: res.data.receipeName,
@@ -47,7 +47,7 @@ const UpdateReceipe = (props) => {
     };
     console.log('data', data);
     axios
-      .put(`http://localhost:8082/api/receipes/${id}`, data)
+      .put(`https://hot-receipe.onrender.com/api/receipes/${id}`, data)
       .then((res) => {
         navigate(`/show-receipe/${id}`);
       })
